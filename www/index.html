@@ -412,12 +412,14 @@
         $(document).ready(function(){				
 			if($(window).width() < 768){
 				$(".navbar-nav li a").click(function(){
-					$("#navbar").removeClass("collapse in");
+					$("#navbar").removeClass("collapse in");					
+				});
+				$(".tab-content a").click(function(){				
 					var panel = $(".tab-content").find('.active');
 					$('html,body').animate({
 						scrollTop: $(panel).offset().top -110
-					}, 500);					
-				});
+					}, 500);	
+				});					
 			}				
         });
         </script>		
