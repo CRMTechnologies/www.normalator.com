@@ -2,7 +2,7 @@ name: Upload Preview To Azure Blob Storage
 on: 
   push:
     branches: 
-      - 'master'
+      - 'staging'
     paths:
       - 'www/**'
         
