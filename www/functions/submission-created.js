@@ -7,16 +7,16 @@ exports.handler = function (event, context, callback) {
 		body.data
 	);
 
-  // An object of options to indicate where to post to
-  var post_options = {
-      host: 's1010.t.eloqua.com',
-      port: '443',
-      path: '/e/f2',
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-      }
-  };
+	// An object of options to indicate where to post to
+	var post_options = {
+		host: 's1010.t.eloqua.com',
+		port: '443',
+		path: '/e/f2',
+		method: 'POST',
+		headers: {
+		  'Content-Type': 'application/x-www-form-urlencoded'
+		}
+	};
 
   // Set up the request
   var post_req = https.request(post_options, function(res) {
