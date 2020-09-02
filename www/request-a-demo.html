@@ -80,6 +80,8 @@
     <input value="normDemo" type="hidden" name="elqFormName"  />
     <input value="1010" type="hidden" name="elqSiteId"  />
     <input name="elqCampaignId" type="hidden"  />
+    <input type="hidden" name="elqCustomerGUID" value="">
+    <input type="hidden" name="elqCookieWrite" value="0">	 	  
     <div id="formElement1" class="sc-view form-design-field sc-static-layout item-padding sc-regular-size" >
       <div class="field-wrapper" >
       </div>
@@ -1212,6 +1214,26 @@
       }
     }
   </script>
+<script type='text/javascript'>
+var elqTimerId = null, timeout = 5;
+
+function WaitUntilCustomerGUIDIsRetrieved() {
+	if (!!(elqTimerId)) {
+		if (timeout == 0) {
+			return;
+		}
+		if (typeof this.GetElqCustomerGUID === 'function') {
+			document.forms["dcDemo"].elements["elqCustomerGUID"].value = GetElqCustomerGUID();
+			return;
+		}
+		timeout -= 1;
+	}
+	elqTimerId = setTimeout("WaitUntilCustomerGUIDIsRetrieved()", 500);
+	return;
+}
+window.onload = WaitUntilCustomerGUIDIsRetrieved;
+_elqQ.push(['elqGetCustomerGUID']);
+</script>	
 </div>
 					<div class="modal-privacy">
 					<p><small>We take data privacy very seriously and will not share your details.<br>
