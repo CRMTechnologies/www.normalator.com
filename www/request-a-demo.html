@@ -76,7 +76,7 @@
              <div class="row">
               <div class="col-md-12 form">		  
 <div>
-  <form method="post" name="dcDemo" action="/request-a-demo-ty" onsubmit="return handleFormSubmit(this)" id="form106" class="elq-form" netlify >
+  <form method="post" name="normDemo" action="/request-a-demo-ty" onsubmit="return handleFormSubmit(this)" id="form106" class="elq-form" netlify >
     <input value="normDemo" type="hidden" name="elqFormName"  />
     <input value="1010" type="hidden" name="elqSiteId"  />
     <input name="elqCampaignId" type="hidden"  />
@@ -1223,7 +1223,7 @@ function WaitUntilCustomerGUIDIsRetrieved() {
 			return;
 		}
 		if (typeof this.GetElqCustomerGUID === 'function') {
-			document.forms["dcDemo"].elements["elqCustomerGUID"].value = GetElqCustomerGUID();
+			document.forms["normDemo"].elements["elqCustomerGUID"].value = GetElqCustomerGUID();
 			return;
 		}
 		timeout -= 1;
