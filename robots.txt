@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /contact-us-ty.html
+Disallow: /request-a-demo-ty.html
