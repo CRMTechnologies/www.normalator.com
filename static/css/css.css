@@ -465,8 +465,8 @@ color:whitesmoke;
 	.wrapper { height: 500px; }
 	.challenges-container img.img-mob { padding-top: 60px; }	
 	.navbar-nav>li {padding-left: 0px; text-align: center;}
-	.jumbo {padding-top: 150px;}
 	.jumbotron {padding-top: 0px; margin-bottom: 0px; padding-bottom: 0px;}
+	.jumbo {padding-top: 150px;}	
 	.margintopbot{padding-top:30px;}
 	.jumbotron .global {font-size: 30px;}
 	.jumbotron .main-text {font-size: 30px;}
