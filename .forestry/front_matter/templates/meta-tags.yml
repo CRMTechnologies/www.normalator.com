@@ -16,4 +16,4 @@ fields:
   label: keywords
 - type: boolean
   name: isHome
-  label: isHome
+  label: Home Page?
