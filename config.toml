@@ -1,0 +1,15 @@
+baseurl = "https://www.normalator.com/"
+languageCode = "en-gb"
+title = "Normalator"
+description = "A tool for normalizing free text for cleaner more manageable and searchable data."
+preserveTaxonomyNames = true
+disableKinds = "taxonomyTerm"
+[permalinks]
+  post = "/:title/"
+  who-we-work-with = "/customers/:slug"
+[taxonomies]
+  tag = "tags"
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
