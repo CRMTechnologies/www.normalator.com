@@ -1,0 +1,19 @@
+---
+label: Meta Tags
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: textarea
+  name: description
+  label: description
+- type: file
+  name: image
+  label: image
+- type: list
+  name: keywords
+  label: keywords
+- type: boolean
+  name: isHome
+  label: isHome
