@@ -30,7 +30,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script src="js/shared.js"></script>
         <script src="js/cookies.js"></script>
-        <script src="/js/form.js"></script>	 		
+         {{ if not .Params.isHome }}<script src="/js/form.js"></script>{{ else }}	 		
         <script type="text/javascript">
         $(document).ready(function(){				
 			if($(window).width() < 768){
@@ -45,4 +45,4 @@
 				});					
 			}				
         });
-        </script>	
+        </script>{{ end }}	
