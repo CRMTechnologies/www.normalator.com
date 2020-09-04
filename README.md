@@ -1,4 +1,6 @@
 # www.normalator.com
 Normalator Website
 
-Netlify CMS: https://app.forestry.io/sites/ow5qk-ndnwugzg/
+Forestry CMS: https://app.forestry.io/sites/ow5qk-ndnwugzg/
+
+Netlify Hosting: https://app.netlify.com/sites/eloquent-hamilton-ec8fd8
