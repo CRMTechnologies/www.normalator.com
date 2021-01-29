@@ -74,6 +74,8 @@ var post_data2 = {
   }
 }  
 
+console.log(post_data2);
+
 	// An object of options to indicate where to post to
 	var post_options2 = {
 		host: 'api.hsforms.com',
@@ -130,6 +132,7 @@ var post_data2 = {
 			statusCode: 200,
 			body:  "Done" 
 		});
+		console.log(chunk.errors);		
 		console.log( "Done" );	      
       });
       res.on('error', function (e) {
