@@ -86,7 +86,7 @@ var post_data2 = {
 	};
 		
   // Set up the request
-  var post_req = https.request(post_options2, function(res) {
+  var post_req2 = https.request(post_options2, function(res) {
       res.setEncoding('utf8');
       res.on('data', function (chunk) {
 		callback(null, {
