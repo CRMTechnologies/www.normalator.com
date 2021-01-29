@@ -114,7 +114,7 @@ var post_data2 = {
 	var post_options2 = {
 		host: 'api.hsforms.com',
 		port: '443',
-		path: 'https://api.hsforms.com/submissions/v3/integration/submit/8865266/' + data.body.formGuid,
+		path: 'https://api.hsforms.com/submissions/v3/integration/submit/8865266/' + body.data.formGuid,
 		method: 'POST',
 		headers: {
 		  'Content-Type': 'application/json'
