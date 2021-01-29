@@ -6,42 +6,6 @@ exports.handler = function (event, context, callback) {
 	var post_data = querystring.stringify(
 		body.data
 	);
-
-	// An object of options to indicate where to post to
-	var post_options = {
-		host: 's1010.t.eloqua.com',
-		port: '443',
-		path: '/e/f2',
-		method: 'POST',
-		headers: {
-		  'Content-Type': 'application/x-www-form-urlencoded'
-		}
-	};
-		
-
-  // Set up the request
-  var post_req = https.request(post_options, function(res) {
-      res.setEncoding('utf8');
-      res.on('data', function (chunk) {
-		callback(null, {
-			statusCode: 200,
-			body:  "Done" 
-		});
-		console.log( "Done" );	      
-      });
-      res.on('error', function (e) {
-		callback(null, {
-			statusCode: 400,
-			body:  "Failed " + e.message 
-		});
-		console.log( "Failed " + e.message );
-      });
-
-  });
-	
-  // post the data
-  post_req.write(post_data);
-  post_req.end();
   
 var genComms = false;
 if (body.data.OptIn == "on") {
@@ -114,7 +78,7 @@ var post_data2 = {
 	var post_options2 = {
 		host: 'api.hsforms.com',
 		port: '443',
-		path: 'https://api.hsforms.com/submissions/v3/integration/submit/8865266/' + body.data.formGuid,
+		path: '/submissions/v3/integration/submit/8865266/' + body.data.formGuid,
 		method: 'POST',
 		headers: {
 		  'Content-Type': 'application/json'
@@ -142,6 +106,44 @@ var post_data2 = {
   });
 	
   // post the data
-  post_req.write(post_data2);
+  post_req2.write(post_data2);
+  post_req2.end();
+  
+  
+	// An object of options to indicate where to post to
+	var post_options = {
+		host: 's1010.t.eloqua.com',
+		port: '443',
+		path: '/e/f2',
+		method: 'POST',
+		headers: {
+		  'Content-Type': 'application/x-www-form-urlencoded'
+		}
+	};
+		
+
+  // Set up the request
+  var post_req = https.request(post_options, function(res) {
+      res.setEncoding('utf8');
+      res.on('data', function (chunk) {
+		callback(null, {
+			statusCode: 200,
+			body:  "Done" 
+		});
+		console.log( "Done" );	      
+      });
+      res.on('error', function (e) {
+		callback(null, {
+			statusCode: 400,
+			body:  "Failed " + e.message 
+		});
+		console.log( "Failed " + e.message );
+      });
+
+  });
+	
+  // post the data
+  post_req.write(post_data);
   post_req.end();
+  
 }
