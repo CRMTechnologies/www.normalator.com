@@ -34,7 +34,7 @@ $(document).ready(function(){
 });
 
 function setHiddenFormFields() {
-    var hiddenFields = document.querySelectorAll("input[foo^='utm_']");
+    var hiddenFields = document.querySelectorAll("input[name^='utm_']");
 	for (var i=0; i<hiddenFields.length; i++) {
 		var param = sessionStorage.getItem(hiddenFields[i].name);
 		if (param) { 
