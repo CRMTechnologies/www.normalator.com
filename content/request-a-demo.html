@@ -997,7 +997,7 @@ title: Request a Demo
       </div>
     </div>
   </form>
-  <script src="https://img.en25.com/i/livevalidation_standalone.compressed.js" type="text/javascript" >
+  <script src="/js/livevalidation_standalone.compressed.js" type="text/javascript" >
   </script>
   <style type="text/css" media="screen" >
     .elq-form .loader{
@@ -1121,8 +1121,7 @@ title: Request a Demo
       spinner.setAttribute('class', 'loader');
       submitButton.setAttribute('disabled', true);
       submitButton.style.cursor = 'wait';
-      submitButton.parentNode.appendChild(spinner);
-	  document.getElementById('htuk').value = document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*\=\s*([^;]*).*$)|^.*$/, "$1");	  	  
+      submitButton.parentNode.appendChild(spinner);	  	  
       return true;
     }
     function resetSubmitButton(e){
@@ -1164,27 +1163,7 @@ title: Request a Demo
         }
       }
     }
-  </script>
-<script type='text/javascript'>
-var elqTimerId = null, timeout = 5;
-
-function WaitUntilCustomerGUIDIsRetrieved() {
-	if (!!(elqTimerId)) {
-		if (timeout == 0) {
-			return;
-		}
-		if (typeof this.GetElqCustomerGUID === 'function') {
-			document.forms["normDemo"].elements["elqCustomerGUID"].value = GetElqCustomerGUID();
-			return;
-		}
-		timeout -= 1;
-	}
-	elqTimerId = setTimeout("WaitUntilCustomerGUIDIsRetrieved()", 500);
-	return;
-}
-window.onload = WaitUntilCustomerGUIDIsRetrieved;
-_elqQ.push(['elqGetCustomerGUID']);
-</script>	
+  </script>	
 </div>
 					<div class="modal-privacy">
 					<p><small>We take data privacy very seriously and will not share your details.<br>
