@@ -26,7 +26,9 @@ title: Contact Us
     <input value="1010" type="hidden" name="elqSiteId"  />
     <input name="elqCampaignId" type="hidden"  />
     <input type="hidden" name="elqCustomerGUID" value="">
-    <input type="hidden" name="elqCookieWrite" value="0">		  
+    <input type="hidden" name="elqCookieWrite" value="0">
+    <input type="hidden" id="htuk" name="hutk"  />
+    <input type="hidden" name="formGuid" value="74360a68-9f32-423e-8720-ab6326581f24" />		
     <div id="formElement1" class="sc-view form-design-field sc-static-layout item-padding sc-regular-size" >
       <div class="field-wrapper" >
       </div>
@@ -1117,6 +1119,7 @@ title: Contact Us
       submitButton.setAttribute('disabled', true);
       submitButton.style.cursor = 'wait';
       submitButton.parentNode.appendChild(spinner);
+	  document.getElementById('htuk').value = document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*\=\s*([^;]*).*$)|^.*$/, "$1");	  	  
       return true;
     }
     function resetSubmitButton(e){
