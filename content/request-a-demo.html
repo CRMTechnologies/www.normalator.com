@@ -26,7 +26,9 @@ title: Request a Demo
     <input value="1010" type="hidden" name="elqSiteId"  />
     <input name="elqCampaignId" type="hidden"  />
     <input type="hidden" name="elqCustomerGUID" value="">
-    <input type="hidden" name="elqCookieWrite" value="0">	 	  
+    <input type="hidden" name="elqCookieWrite" value="0">	
+    <input type="hidden" id="htuk" name="hutk"  />
+    <input type="hidden" name="formGuid" value="aecdead3-6cb2-4cca-bd38-71c88fa46d6f" />		
     <div id="formElement1" class="sc-view form-design-field sc-static-layout item-padding sc-regular-size" >
       <div class="field-wrapper" >
       </div>
@@ -1088,6 +1090,9 @@ title: Request a Demo
     var field5 = new LiveValidation(dom5, {
       validMessage: "", onlyOnBlur: false, wait: 300}
                                    );
+    field5.add(Validate.Length, {
+      tooShortMessage:"Invalid length for field value", tooLongMessage: "Invalid length for field value",  minimum: 7, maximum: 20}
+              );								   
     field5.add(Validate.Custom, {
       against: function(value) {
         return !value.match(/(telnet|ftp|https?):\/\/(?:[a-z0-9][a-z0-9-]{0,61}[a-z0-9]\.|[a-z0-9]\.)+[a-z]{2,63}/i);
@@ -1117,6 +1122,7 @@ title: Request a Demo
       submitButton.setAttribute('disabled', true);
       submitButton.style.cursor = 'wait';
       submitButton.parentNode.appendChild(spinner);
+	  document.getElementById('htuk').value = document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*\=\s*([^;]*).*$)|^.*$/, "$1");	  	  
       return true;
     }
     function resetSubmitButton(e){
