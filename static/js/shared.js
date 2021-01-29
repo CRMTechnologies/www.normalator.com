@@ -20,4 +20,26 @@ $(document).ready(function(){
 		  $('.pad-mob-feat a.active').removeClass('active');
 		  $(event.target).addClass('active');
 	});
+	
+	if(document.location.search.length) {
+		for (var i=0;i < vars.length;i++) { 
+			var pair = vars[i].split("="); 
+			if( && (pair[1] != "")) {
+				var xVal = pair[1].replace(/\+/g, '%20');
+				$("[name='" + pair[0] + "']").val( decodeURIComponent( xVal ) );
+			}            
+		} 
+	}  	
+	
 });
+
+function setHiddenFormFields() {
+    var hiddenFields = document.querySelectorAll("input[foo^='utm_']");
+	for (var i=0; i<hiddenFields.length; i++) {
+		var param = sessionStorage.getItem(hiddenFields[i].name);
+		if (param) { 
+			document.getElementsByName(hiddenFields[i].name)[0].value = param;
+		}
+	}
+	document.getElementById('htuk').value = document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+}
