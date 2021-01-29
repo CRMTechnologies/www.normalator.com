@@ -50,8 +50,8 @@ var post_data2 = {
   ],
   "context": {
     "hutk": body.data.hutk, 
-    "pageUri": "https://www.normalator.com/contact-us/",
-    "pageName": "Contact Us | Normalator",
+    "pageUri": body.data.referrer,
+    "pageName": body.data.asset,
 	"ipAddress": body.data.ip
   },
   "legalConsentOptions": {
