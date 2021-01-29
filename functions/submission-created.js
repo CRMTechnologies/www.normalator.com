@@ -17,6 +17,7 @@ exports.handler = function (event, context, callback) {
 		  'Content-Type': 'application/x-www-form-urlencoded'
 		}
 	};
+		
 
   // Set up the request
   var post_req = https.request(post_options, function(res) {
@@ -41,5 +42,106 @@ exports.handler = function (event, context, callback) {
   // post the data
   post_req.write(post_data);
   post_req.end();
+  
+var genComms = false;
+if (body.data.OptIn == "on") {
+	genComms = true;
+}
 
+var eventComms = false;
+if (body.data.subscribeToEvents1 == "on") {
+	eventComms = true;
+}
+
+var post_data2 = {
+  "fields": [
+    {
+      "name": "email",
+      "value": body.data.emailAddress
+    },
+    {
+      "name": "firstname",
+      "value": body.data.firstName
+    },
+    {
+      "name": "lastname",
+      "value": body.data.lastName
+    },
+    {
+      "name": "company",
+      "value": body.data.company
+    },
+    {
+      "name": "country",
+      "value": body.data.country
+    },
+    {
+      "name": "phone",
+      "value": body.data.busPhone
+    },
+    {
+      "name": "message",
+      "value": body.data.paragraphText
+    }
+  ],
+  "context": {
+    "hutk": body.data.hutk, 
+    "pageUri": "https://www.normalator.com/contact-us/",
+    "pageName": "Contact Us | Normalator",
+	"ipAddress": body.data.ip
+  },
+  "legalConsentOptions": {
+    "consent": { 
+      "communications": [
+        "consentToProcess":true,
+        "text":"Please complete the form below and we will contact you shortly. We take data privacy very seriously and will not share your details. Read our privacy policy.",	  
+        {
+          "value": genComms,
+          "subscriptionTypeId": 10994927,
+          "text": "Subscribe to Email Communications: Email content round-ups, hints and tips to help you improve marketing effectiveness"
+        },
+        {
+          "value": eventComms,
+          "subscriptionTypeId": 11618778,
+          "text": "Subscribe to Events and Webinars: Adhoc email notifications about upcoming events and webinars"
+        }		
+      ]
+    }
+  }
+}  
+
+	// An object of options to indicate where to post to
+	var post_options2 = {
+		host: 'api.hsforms.com',
+		port: '443',
+		path: 'https://api.hsforms.com/submissions/v3/integration/submit/8865266/' + data.body.formGuid,
+		method: 'POST',
+		headers: {
+		  'Content-Type': 'application/json'
+		}
+	};
+		
+  // Set up the request
+  var post_req = https.request(post_options2, function(res) {
+      res.setEncoding('utf8');
+      res.on('data', function (chunk) {
+		callback(null, {
+			statusCode: 200,
+			body:  "Done" 
+		});
+		console.log( "Done" );	      
+      });
+      res.on('error', function (e) {
+		callback(null, {
+			statusCode: 400,
+			body:  "Failed " + e.message 
+		});
+		console.log( "Failed " + e.message );
+      });
+
+  });
+	
+  // post the data
+  post_req.write(post_data2);
+  post_req.end();
 }
