@@ -92,9 +92,9 @@ var post_data2 = {
   },
   "legalConsentOptions": {
     "consent": { 
-      "communications": [
-        "consentToProcess":true,
-        "text":"Please complete the form below and we will contact you shortly. We take data privacy very seriously and will not share your details. Read our privacy policy.",	  
+	"consentToProcess": true,
+	"text": "Please complete the form below and we will contact you shortly. We take data privacy very seriously and will not share your details. Read our privacy policy.",	 	
+      "communications": [ 
         {
           "value": genComms,
           "subscriptionTypeId": 10994927,
