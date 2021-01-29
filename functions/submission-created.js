@@ -106,7 +106,7 @@ var post_data2 = {
   });
 	
   // post the data
-  post_req2.write(post_data2);
+  post_req2.write(JSON.stringify(post_data2));
   post_req2.end();
   
   
