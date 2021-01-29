@@ -1090,6 +1090,9 @@ title: Request a Demo
     var field5 = new LiveValidation(dom5, {
       validMessage: "", onlyOnBlur: false, wait: 300}
                                    );
+    field5.add(Validate.Length, {
+      tooShortMessage:"Invalid length for field value", tooLongMessage: "Invalid length for field value",  minimum: 7, maximum: 20}
+              );								   
     field5.add(Validate.Custom, {
       against: function(value) {
         return !value.match(/(telnet|ftp|https?):\/\/(?:[a-z0-9][a-z0-9-]{0,61}[a-z0-9]\.|[a-z0-9]\.)+[a-z]{2,63}/i);
