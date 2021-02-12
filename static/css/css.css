@@ -560,6 +560,7 @@ input[type="range"]::-moz-focus-outer {
   display: inline-flex;
   align-items: baseline;
   font-size: 20px;
+  padding-bottom: 5px;
 }
 .pricing-item-price-amount {
   font-size: 36px;
