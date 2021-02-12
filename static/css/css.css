@@ -502,7 +502,7 @@ input[type="range"]::-moz-focus-outer {
 }
 
 .form-slider label {
-  display: block;
+  display: block !important;
 }
 
 .pricing-slider {
