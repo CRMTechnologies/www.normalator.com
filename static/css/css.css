@@ -8,6 +8,7 @@
     font-family: FuturaBlack;
     src: url('/font/Futura Heavy font.ttf');
 }
+
 body {
 	font-family: FuturaBook, Nunito;
 }
@@ -413,36 +414,8 @@ color:whitesmoke;
 	display: flex!important;
 }
 
-/*Features and Pricing*/
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
+/*Section Features and Pricing*/
 
-html {
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.1px;
-}
-
-body {
-  color: #607090;
-  font-size: 1rem;
-  margin: 0;
-  padding: 48px;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-body,
-button,
-input,
-select,
-textarea {
-  font-family: "Heebo", sans-serif;
-  font-weight: 400;
-}
 .button {
   display: flex;
   width: 100%;
@@ -517,7 +490,7 @@ input[type="range"]::-moz-focus-outer {
 }
 
 .pricing-slider {
-  max-width: 280px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -533,7 +506,7 @@ input[type="range"]::-moz-focus-outer {
 }
 
 .pricing-slider {
-  max-width: 280px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -559,8 +532,8 @@ input[type="range"]::-moz-focus-outer {
   margin-top: -12px;
 }
 .pricing-item {
-  flex-basis: 280px;
-  max-width: 280px;
+  /* flex-basis: 280px;
+  max-width: 280px; */
   box-sizing: content-box;
   padding: 12px;
 }
