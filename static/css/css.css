@@ -501,6 +501,10 @@ input[type="range"]::-moz-focus-outer {
   margin-bottom: 16px;
 }
 
+.form-slider label {
+  display: block;
+}
+
 .pricing-slider {
   margin-bottom: 48px;
 }
