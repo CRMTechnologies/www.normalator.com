@@ -242,6 +242,7 @@ hr.spacer {
 	margin: auto;
 	line-height: 1.8;
 	max-width: 100%;
+	padding-bottom: 30px;
 }
 
 /*Smart Integrations*/
@@ -522,9 +523,10 @@ input[type="range"]::-moz-focus-outer {
 .pricing-slider .pricing-slider-value {
   /* position: absolute; */
   font-size: 14px;
+  font-weight: 500;
   line-height: 22px;
   font-weight: 500;
-  color: #909cb5;
+  color: #5c6374;
   margin-top: 8px;
   --thumb-size: 36px;
 }
@@ -551,6 +553,7 @@ input[type="range"]::-moz-focus-outer {
   box-shadow: 0 8px 16px rgba(46, 52, 88, 0.16);
 }
 .pricing-item-title {
+  font-size:	
   font-weight: 500;
 }
 .pricing-item-price {
