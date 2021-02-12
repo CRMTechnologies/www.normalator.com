@@ -509,13 +509,13 @@ input[type="range"]::-moz-focus-outer {
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
+  /* position: relative; */
 }
 .pricing-slider input {
   width: 100%;
 }
 .pricing-slider .pricing-slider-value {
-  position: absolute;
+  /* position: absolute; */
   font-size: 14px;
   line-height: 22px;
   font-weight: 500;
