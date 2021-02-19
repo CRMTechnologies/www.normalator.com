@@ -26,7 +26,7 @@ $(document).ready(function(){
 			var pair = vars[i].split("="); 
 			if( (pair[0].substring(0, 4) == "utm_") && (pair[1] != "")) {
 				var xVal = pair[1].replace(/\+/g, '%20');
-				$("[name='" + pair[0] + "']").val( decodeURIComponent( xVal ) );
+				sessionStorage.setItem( pair[0], decodeURIComponent( xVal ) );
 			}            
 		} 
 	}  	
