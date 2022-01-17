@@ -36,7 +36,7 @@ var post_data2 = {
       "value": body.data.company
     },
     {
-      "name": "country",
+      "name": "eloqua_country",
       "value": body.data.country
     },
     {
@@ -49,10 +49,9 @@ var post_data2 = {
     }
   ],
   "context": {
-    "hutk": body.data.hutk, 
     "pageUri": body.data.referrer,
     "pageName": body.data.asset,
-	"ipAddress": body.data.ip
+    "ipAddress": body.data.ip
   },
   "legalConsentOptions": {
     "consent": { 
@@ -74,6 +73,10 @@ var post_data2 = {
   }
 }  
 
+if (body.data.hutk != "") {
+	post_data2.context.hutk = body.data.hutk;
+}
+	
 console.log(post_data2);
 
 	// An object of options to indicate where to post to
@@ -95,14 +98,14 @@ console.log(post_data2);
 			statusCode: 200,
 			body:  "Done" 
 		});
-		console.log( "Done" );	      
+		console.log( "200: " + chunk );      
       });
       res.on('error', function (e) {
 		callback(null, {
 			statusCode: 400,
-			body:  "Failed " + e.message 
+			body:  "Failed" 
 		});
-		console.log( "Failed " + e.message );
+		console.log( "Failed " + e );
       });
 
   });
@@ -110,43 +113,5 @@ console.log(post_data2);
   // post the data
   post_req2.write(JSON.stringify(post_data2));
   post_req2.end();
-  
-  
-	// An object of options to indicate where to post to
-	var post_options = {
-		host: 's1010.t.eloqua.com',
-		port: '443',
-		path: '/e/f2',
-		method: 'POST',
-		headers: {
-		  'Content-Type': 'application/x-www-form-urlencoded'
-		}
-	};
-		
-
-  // Set up the request
-  var post_req = https.request(post_options, function(res) {
-      res.setEncoding('utf8');
-      res.on('data', function (chunk) {
-		callback(null, {
-			statusCode: 200,
-			body:  "Done" 
-		});
-		console.log(chunk.errors);		
-		console.log( "Done" );	      
-      });
-      res.on('error', function (e) {
-		callback(null, {
-			statusCode: 400,
-			body:  "Failed " + e.message 
-		});
-		console.log( "Failed " + e.message );
-      });
-
-  });
-	
-  // post the data
-  post_req.write(post_data);
-  post_req.end();
   
 }
